@@ -1,9 +1,11 @@
-library(knitr)
-library(rvest)
-library(dplyr)
-library(gsubfn)
-library(ggplot2)
+# library(knitr)
+# library(rvest)
+# library(dplyr)
+# library(gsubfn)
+# library(ggplot2)
 
+
+#tabele rezultatov posameznih dirk
 
 htmlZmagovalci16 <- html_session("https://www.formula1.com/en/results.html/2016/races/94/great-britain/race-result.html") %>% read_html
 html_tabelaZmagovalci16 <- htmlZmagovalci16 %>% html_nodes(xpath="//table[1]") %>% .[[1]]
@@ -114,3 +116,28 @@ htmlAbuDhabi16 <- html_session("https://www.formula1.com/en/results.html/2016/ra
 html_tabelaAbuDhabi16 <- htmlAbuDhabi16 %>% html_nodes(xpath="//table[1]") %>% .[[1]]
 tabelaAbuDhabi16 <- html_tabelaAbuDhabi16%>% html_table()
 tabelaAbuDhabi16 <-tabelaAbuDhabi16[2:7]
+
+
+#tabela grand prix-ov
+
+html <- html_session("https://en.wikipedia.org/wiki/2016_Formula_One_season") %>% read_html()
+html_tabela <- html %>% html_nodes(xpath="//table[3]") %>% .[[1]]
+tabelaGandPrix16 <- html_tabela %>% html_table()
+tabelaGandPrix16[grep(",", tabelaGandPrix16[[1]]), 1] <- html_tabela %>%
+  html_nodes(xpath="//span[@class='vcard']//a[@title]") %>%
+  html_text()
+tabelaGandPrix16<- tabelaGandPrix16[-c(22),]
+
+
+#tabela ekip
+
+uvozitabelaekip <- function(){
+  return(read.csv("podatki/ekipe.csv",
+                  skip=0,
+                  header=TRUE,
+                  row.names=1,
+                  na.string="-",
+                  fileEncoding = "Windows-1252"))
+}
+
+tabelaekip<-uvozitabelaekip()
