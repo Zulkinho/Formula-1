@@ -5,10 +5,10 @@ library(gsubfn)
 library(ggplot2)
 
 
-htmlZmagovalci <- html_session("https://www.formula1.com/en/results.html/2016/races/94/great-britain/race-result.html") %>% read_html
-html_tabelaZmagovalci16 <- htmlZmagovalci %>% html_nodes(xpath="//table[1]") %>% .[[1]]
-tabelaZmagovalci <- html_tabelaZmagovalci%>% html_table()
-tabelaZmagovalci<-tabelaZmagovalci[2:7]
+htmlZmagovalci16 <- html_session("https://www.formula1.com/en/results.html/2016/races/94/great-britain/race-result.html") %>% read_html
+html_tabelaZmagovalci16 <- htmlZmagovalci16 %>% html_nodes(xpath="//table[1]") %>% .[[1]]
+tabelaZmagovalci16 <- html_tabelaZmagovalci16%>% html_table()
+tabelaZmagovalci16<-tabelaZmagovalci16[2:7]
 
 htmlAvstralija16 <- html_session("https://www.formula1.com/en/results.html/2016/races/938/australia.html") %>% read_html
 html_tabelaAvstralija16 <- htmlAvstralija16 %>% html_nodes(xpath="//table[1]") %>% .[[1]]
@@ -111,6 +111,6 @@ tabelaBrazil16 <- html_tabelaBrazil16%>% html_table()
 tabelaBrazil16 <-tabelaBrazil16[2:7]
 
 htmlAbuDhabi16 <- html_session("https://www.formula1.com/en/results.html/2016/races/957/abu-dhabi/race-result.html") %>% read_html
-html_tabelaAbuDhabi16 <- htmlAbuDhabi6 %>% html_nodes(xpath="//table[1]") %>% .[[1]]
+html_tabelaAbuDhabi16 <- htmlAbuDhabi16 %>% html_nodes(xpath="//table[1]") %>% .[[1]]
 tabelaAbuDhabi16 <- html_tabelaAbuDhabi16%>% html_table()
 tabelaAbuDhabi16 <-tabelaAbuDhabi16[2:7]
