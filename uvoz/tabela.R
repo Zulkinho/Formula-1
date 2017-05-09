@@ -1,9 +1,9 @@
-# library(knitr)
-# library(rvest)
-# library(dplyr)
-# library(gsubfn)
-# library(ggplot2)
-# library(tidyr)
+library(knitr)
+library(rvest)
+library(dplyr)
+library(gsubfn)
+library(ggplot2)
+library(tidyr)
 
 #tabele rezultatov posameznih dirk
 
@@ -12,7 +12,8 @@ html_tabelaZmagovalci16 <- htmlZmagovalci16 %>% html_nodes(xpath="//table[1]") %
 tabelaZmagovalci16 <- html_tabelaZmagovalci16%>% html_table()
 tabelaZmagovalci16 <-tabelaZmagovalci16[2:7]
 tabelaZmagovalci16 <- separate(tabelaZmagovalci16, Winner, c("Name", "Surname", "Short"), sep = "\n", remove = TRUE, 
-         convert = FALSE, extra = "warn", fill = "warn");
+         convert = FALSE, extra = "warn", fill = "warn")
+tabelaZmagovalci16 <- tabelaZmagovalci16[-c(5)]
 
 htmlAvstralija16 <- html_session("https://www.formula1.com/en/results.html/2016/races/938/australia.html") %>% read_html
 html_tabelaAvstralija16 <- htmlAvstralija16 %>% html_nodes(xpath="//table[1]") %>% .[[1]]
@@ -182,7 +183,9 @@ tabelaAbuDhabi16 <- separate(tabelaAbuDhabi16, Driver, c("Name", "Surname", "Sho
          convert = FALSE, extra = "warn", fill = "warn")
 tabelaAbuDhabi16 <- tabelaAbuDhabi16[-c(5)]
 
+
 #tabela grand prix-ov
+
 html <- html_session("https://en.wikipedia.org/wiki/2016_Formula_One_season") %>% read_html()
 html_tabela <- html %>% html_nodes(xpath="//table[3]") %>% .[[1]]
 tabelaGandPrix16 <- html_tabela %>% html_table()
@@ -190,3 +193,5 @@ tabelaGandPrix16[grep(",", tabelaGandPrix16[[1]]), 1] <- html_tabela %>%
   html_nodes(xpath="//span[@class='vcard']//a[@title]") %>%
   html_text()
 tabelaGandPrix16<- tabelaGandPrix16[-c(22),]
+tabelaGandPrix16<- separate(tabelaGandPrix16, Circuit, c("Circuit", "Town"), sep = ",", remove = TRUE,
+            convert = FALSE, extra = "warn", fill = "warn")
