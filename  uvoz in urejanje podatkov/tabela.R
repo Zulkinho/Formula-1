@@ -4,7 +4,10 @@ library(dplyr)
 library(gsubfn)
 library(ggplot2)
 library(tidyr)
+<<<<<<< HEAD: uvoz in urejanje podatkov/tabela.R
 
+=======
+>>>>>>> bae152f78a03202b7eae7833e645de21089b2809:uvoz/tabela.R
 
 #tabele rezultatov posameznih dirk
 
@@ -196,7 +199,10 @@ tabelaGandPrix16[grep(",", tabelaGandPrix16[[1]]), 1] <- html_tabela %>%
 tabelaGandPrix16<- tabelaGandPrix16[-c(22),]
 tabelaGandPrix16<- separate(tabelaGandPrix16, Circuit, c("Circuit", "Town"), sep = ",", remove = TRUE,
                             convert = FALSE, extra = "warn", fill = "warn")
+<<<<<<< HEAD: uvoz in urejanje podatkov/tabela.R
 
+=======
+>>>>>>> bae152f78a03202b7eae7833e645de21089b2809:uvoz/tabela.R
 
 #tabela ekip
 
@@ -208,5 +214,10 @@ uvozitabelaekip <- function(){
                   na.string="-",
                   fileEncoding = "Windows-1252"))
 }
+<<<<<<< HEAD: uvoz in urejanje podatkov/tabela.R
 tabelaekip<-uvozitabelaekip()
 
+=======
+
+tabelaekip<-uvozitabelaekip()
+>>>>>>> bae152f78a03202b7eae7833e645de21089b2809:uvoz/tabela.R
