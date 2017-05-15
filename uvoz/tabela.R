@@ -1,19 +1,10 @@
-<<<<<<< HEAD
-# library(knitr)
-# library(rvest)
-# library(dplyr)
-# library(gsubfn)
-# library(ggplot2)
-=======
 library(knitr)
 library(rvest)
 library(dplyr)
 library(gsubfn)
 library(ggplot2)
 library(tidyr)
->>>>>>> 0efa2a6ce3e2191c28913279614f2303412d05fb
 
-#tabele rezultatov posameznih dirk
 
 #tabele rezultatov posameznih dirk
 
@@ -189,12 +180,9 @@ htmlAbuDhabi16 <- html_session("https://www.formula1.com/en/results.html/2016/ra
 html_tabelaAbuDhabi16 <- htmlAbuDhabi16 %>% html_nodes(xpath="//table[1]") %>% .[[1]]
 tabelaAbuDhabi16 <- html_tabelaAbuDhabi16%>% html_table()
 tabelaAbuDhabi16 <-tabelaAbuDhabi16[2:7]
-<<<<<<< HEAD
-=======
 tabelaAbuDhabi16 <- separate(tabelaAbuDhabi16, Driver, c("Name", "Surname", "Short"), sep = "\n", remove = TRUE,
          convert = FALSE, extra = "warn", fill = "warn")
 tabelaAbuDhabi16 <- tabelaAbuDhabi16[-c(5)]
->>>>>>> 0efa2a6ce3e2191c28913279614f2303412d05fb
 
 
 #tabela grand prix-ov
@@ -206,7 +194,8 @@ tabelaGandPrix16[grep(",", tabelaGandPrix16[[1]]), 1] <- html_tabela %>%
   html_nodes(xpath="//span[@class='vcard']//a[@title]") %>%
   html_text()
 tabelaGandPrix16<- tabelaGandPrix16[-c(22),]
-<<<<<<< HEAD
+tabelaGandPrix16<- separate(tabelaGandPrix16, Circuit, c("Circuit", "Town"), sep = ",", remove = TRUE,
+                            convert = FALSE, extra = "warn", fill = "warn")
 
 
 #tabela ekip
@@ -221,7 +210,3 @@ uvozitabelaekip <- function(){
 }
 
 tabelaekip<-uvozitabelaekip()
-=======
-tabelaGandPrix16<- separate(tabelaGandPrix16, Circuit, c("Circuit", "Town"), sep = ",", remove = TRUE,
-            convert = FALSE, extra = "warn", fill = "warn")
->>>>>>> 0efa2a6ce3e2191c28913279614f2303412d05fb
