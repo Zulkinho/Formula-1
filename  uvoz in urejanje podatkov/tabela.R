@@ -208,5 +208,5 @@ uvozitabelaekip <- function(){
                   na.string="-",
                   fileEncoding = "Windows-1252"))
 }
-
 tabelaekip<-uvozitabelaekip()
+
