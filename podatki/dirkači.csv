@@ -1,25 +1,12 @@
-Name,Surname,Car number,Age,Height,Weight,Country
-1,Sebastian,Vettel,5,29,176,58,Germany
-2,Kimi,Räikkönen,7,37,175,62,Finland
-3,Sergio,Perez,11,26,173,63,Mexico
-4,Nico,Hulkenberg,27,28,184,70,Germany
-5,Romain,Grosjean,8,30,180,71,France
-6,Esteban,Gutierrez,21,24,183,64,Mexico
-7,Fernando,Alonso,14,35,171,68,Spain
-8,Stoffel,Vandoorne,47,24,176,65,Belgium
-9,Jenson,Button,22,36,181,72,United Kingdom
-10,Nico,Rosberg,6,31,178,71,Germany
-11,Lewis,Hamilton,44,31,175,66,United Kingdom
-13,Rio,Haryanto,88,23,170,58,Indonesia
-14,Esteban,Ocon,31,20,185,66,France
-15,Pascal,Wehrlein,94,22,175,59,Germany
-16,Daniel,Ricciardo,3,27,175,64,Australia
-17,Daniil,Kvyat,26,22,175,58,Russia
-18,Max,Verstappen,33,19,180,67,Netherlands
-19,Kevin,Magnussen,20,24,174,68,Denmark
-20,Jolyon,Palmer,30,25,179,78,United Kingdom
-21,Marcus,Ericsson,9,26,174,64,Sweden
-22,Felipe,Nasr,12,24,175,68,Brazil
-23,Carlos,Sainz Jr.,55,22,177,66,Spain
-24,Felipe,Massa,19,35,166,59,Brazil
-25,Valtteri,Bottas,77,27,176,70,Finland
+Name,Country,Constructor,Chassis,Power unit
+1,Scuderia Ferrari,Italy,Ferrari,SF16-H,Ferrari 061
+2,Sahara Force India Formula One Team,India,Force India-Mercedes,VJM09,Mercedes PU106C Hybrid
+3,Haas F1 Team,United States,Haas-Ferrari,VF-16,Ferrari 061
+4,McLaren Honda Formula 1 Team,United Kingdom,McLaren-Honda,MP4-31,Honda RA616H
+5,Mercedes AMG Petronas Formula One Team,Germany,Mercedes,F1 W07 Hybrid,Mercedes PU106C Hybrid
+6,Manor Racing MRT,United Kingdom,MRT-Mercedes,MRT05,Mercedes PU106C Hybrid
+7,Red Bull Racing,Austria,Red Bull Racing-TAG Heuer,RB12,TAG Heuer
+8,Renault Sport Formula One Team,France,Renault,R.S.16,Renault R.E.16
+9,Sauber F1 Team,Switzerland,Sauber-Ferrari,C35,Ferrari 061
+10,Scuderia Toro Rosso,Italy,Toro Rosso-Ferrari,STR11,Ferrari 060
+11,Williams Martini Racing,United Kingdom,Williams-Mercedes,FW38,Mercedes PU106C Hybrid
